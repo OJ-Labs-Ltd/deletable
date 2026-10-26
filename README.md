@@ -2,7 +2,7 @@
 
 # DiskLens
 
-A free, open-source, native macOS app for seeing what's using your disk and clearing it safely. Written in SwiftUI, no dependencies.
+A free, source-available, native macOS app for seeing what's using your disk and clearing it safely. Written in SwiftUI, no dependencies.
 
 ![DiskLens disk map with a risk rating for the hovered folder](docs/screenshots/disk-map.jpg)
 
@@ -84,4 +84,4 @@ build.sh                      compile, assemble and sign the .app
 
 ## Licence
 
-MIT. See [LICENSE](LICENSE).
+[PolyForm Noncommercial 1.0.0](LICENSE.md). You're free to use, study, modify and share DiskLens for any noncommercial purpose, including personal use and use by charities, schools and public bodies. Selling it, or using it in a commercial product or service, is not permitted without permission from OJ Labs Ltd.
