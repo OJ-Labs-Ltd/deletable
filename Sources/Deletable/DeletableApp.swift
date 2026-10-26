@@ -2,13 +2,13 @@ import SwiftUI
 import AppKit
 
 @main
-struct DiskLensApp: App {
+struct DeletableApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var state = AppState()
     @StateObject private var cleaner = Cleaner()
 
     var body: some Scene {
-        WindowGroup("DiskLens") {
+        WindowGroup("Deletable") {
             ContentView()
                 .environmentObject(state)
                 .environmentObject(cleaner)
@@ -47,11 +47,11 @@ enum Theme {
     static let accent = Color(red: 0.36, green: 0.62, blue: 1.0)
 }
 
-/// Demo mode for screenshots: `DISKLENS_DEMO_HOME=/path/to/demo` makes DiskLens treat that
+/// Demo mode for screenshots: `DELETABLE_DEMO_HOME=/path/to/demo` makes Deletable treat that
 /// folder as the home folder (risk rules and the Home Folder shortcut), so screenshots can be
 /// taken of made-up data. See scripts/make-demo.py.
 enum Demo {
-    static let home: URL? = ProcessInfo.processInfo.environment["DISKLENS_DEMO_HOME"]
+    static let home: URL? = ProcessInfo.processInfo.environment["DELETABLE_DEMO_HOME"]
         .map { URL(fileURLWithPath: $0, isDirectory: true) }
 
     static var homeURL: URL { home ?? FileManager.default.homeDirectoryForCurrentUser }

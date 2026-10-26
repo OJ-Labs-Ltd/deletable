@@ -274,7 +274,7 @@ final class AppState: ObservableObject {
         let escaped = shell.replacingOccurrences(of: "\\", with: "\\\\")
             .replacingOccurrences(of: "\"", with: "\\\"")
         let source = "do shell script \"\(escaped)\" with prompt "
-            + "\"DiskLens wants to remove items that belong to the system.\" with administrator privileges"
+            + "\"Deletable wants to remove items that belong to the system.\" with administrator privileges"
 
         var errorInfo: NSDictionary?
         NSAppleScript(source: source)?.executeAndReturnError(&errorInfo)

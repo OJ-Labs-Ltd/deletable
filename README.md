@@ -1,10 +1,10 @@
-<p align="center"><img src="Resources/AppIcon-1024.png" width="128" alt="DiskLens icon"></p>
+<p align="center"><img src="Resources/AppIcon-1024.png" width="128" alt="Deletable icon"></p>
 
-# DiskLens
+# Deletable
 
 A free, source-available, native macOS app for seeing what's using your disk and clearing it safely. Written in SwiftUI, no dependencies.
 
-![DiskLens disk map with a risk rating for the hovered folder](docs/screenshots/disk-map.jpg)
+![Deletable disk map with a risk rating for the hovered folder](docs/screenshots/disk-map.jpg)
 
 ## Features
 
@@ -35,42 +35,42 @@ Nothing is deleted without confirmation, and by default everything goes to the T
 Screenshots use made-up data from `scripts/make-demo.py`. To recreate them:
 
 ```bash
-python3 scripts/make-demo.py ~/disklens-demo
-open --env DISKLENS_DEMO_HOME=$HOME/disklens-demo /Applications/DiskLens.app
+python3 scripts/make-demo.py ~/deletable-demo
+open --env DELETABLE_DEMO_HOME=$HOME/deletable-demo /Applications/Deletable.app
 ```
 
-then choose **Home Folder**. Delete `~/disklens-demo` afterwards (about 1.5 GB).
+then choose **Home Folder**. Delete `~/deletable-demo` afterwards (about 1.5 GB).
 
 ## Build and install
 
 Requirements: macOS 14 or later and Apple's command line tools (`xcode-select --install`). Xcode itself isn't needed.
 
 ```bash
-git clone https://github.com/OJ-Labs-Ltd/disklens.git
-cd disklens
+git clone https://github.com/OJ-Labs-Ltd/deletable.git
+cd deletable
 ./build.sh --install     # builds, copies to /Applications and launches
 ```
 
-`./build.sh` on its own leaves the app in `build/DiskLens.app`. After pulling changes, double-click **Update DiskLens.command** to rebuild and reinstall.
+`./build.sh` on its own leaves the app in `build/Deletable.app`. After pulling changes, double-click **Update Deletable.command** to rebuild and reinstall.
 
 The app is ad-hoc signed for local use; it isn't notarised.
 
 ## First run
 
-Give DiskLens **Full Disk Access** (System Settings › Privacy & Security › Full Disk Access), then reopen it. Without it, macOS hides Mail, Messages, Safari data, the Trash and other protected folders, and their space is reported as "not visible". You may need to grant it again after a rebuild.
+Give Deletable **Full Disk Access** (System Settings › Privacy & Security › Full Disk Access), then reopen it. Without it, macOS hides Mail, Messages, Safari data, the Trash and other protected folders, and their space is reported as "not visible". You may need to grant it again after a rebuild.
 
 ## Notes
 
 - Sizes are allocated (on-disk) sizes, like Finder's "size on disk".
 - When scanning the startup disk, the other APFS volumes under `/System/Volumes` are skipped because their contents already appear through `/Users`, `/Applications`, etc. Local Time Machine snapshots and purgeable space are managed by macOS and show as "not visible".
 - APFS clones share blocks, so deleting a cloned file can free less than its listed size.
-- Risk levels are rules of thumb, not guarantees. If something important is rated wrongly, please open an issue or a pull request against `Sources/DiskLens/Model/Risk.swift`.
+- Risk levels are rules of thumb, not guarantees. If something important is rated wrongly, please open an issue or a pull request against `Sources/Deletable/Model/Risk.swift`.
 
 ## Project layout
 
 ```
-Sources/DiskLens/
-  DiskLensApp.swift           app entry, menus, theme
+Sources/Deletable/
+  DeletableApp.swift          app entry, menus, theme
   Model/FileNode.swift        tree node (size, children, path)
   Model/DiskScanner.swift     getattrlistbulk scanner, volume list
   Model/SunburstLayout.swift  ring/segment layout
@@ -84,4 +84,4 @@ build.sh                      compile, assemble and sign the .app
 
 ## Licence
 
-[PolyForm Noncommercial 1.0.0](LICENSE.md). You're free to use, study, modify and share DiskLens for any noncommercial purpose, including personal use and use by charities, schools and public bodies. Selling it, or using it in a commercial product or service, is not permitted without permission from OJ Labs Ltd.
+[PolyForm Noncommercial 1.0.0](LICENSE.md). You're free to use, study, modify and share Deletable for any noncommercial purpose, including personal use and use by charities, schools and public bodies. Selling it, or using it in a commercial product or service, is not permitted without permission from OJ Labs Ltd.

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>DiskLens</string>
+    <string>Deletable</string>
     <key>CFBundleDisplayName</key>
-    <string>DiskLens</string>
+    <string>Deletable</string>
     <key>CFBundleIdentifier</key>
-    <string>ltd.ojlabs.disklens</string>
+    <string>ltd.ojlabs.deletable</string>
     <key>CFBundleExecutable</key>
-    <string>DiskLens</string>
+    <string>Deletable</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -27,14 +27,14 @@
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
     <key>NSDownloadsFolderUsageDescription</key>
-    <string>DiskLens measures old downloads so you can clean them.</string>
+    <string>Deletable measures old downloads so you can clean them.</string>
     <key>NSDesktopFolderUsageDescription</key>
-    <string>DiskLens measures folder sizes to show what is using your disk.</string>
+    <string>Deletable measures folder sizes to show what is using your disk.</string>
     <key>NSDocumentsFolderUsageDescription</key>
-    <string>DiskLens measures folder sizes to show what is using your disk.</string>
+    <string>Deletable measures folder sizes to show what is using your disk.</string>
     <key>NSRemovableVolumesUsageDescription</key>
-    <string>DiskLens can scan external drives to show what is using space.</string>
+    <string>Deletable can scan external drives to show what is using space.</string>
     <key>NSNetworkVolumesUsageDescription</key>
-    <string>DiskLens can scan network volumes to show what is using space.</string>
+    <string>Deletable can scan network volumes to show what is using space.</string>
 </dict>
 </plist>

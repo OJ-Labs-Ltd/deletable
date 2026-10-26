@@ -2,12 +2,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "DiskLens",
+    name: "Deletable",
     platforms: [.macOS(.v14)],
     targets: [
         .executableTarget(
-            name: "DiskLens",
-            path: "Sources/DiskLens"
+            name: "Deletable",
+            path: "Sources/Deletable"
         )
     ]
 )

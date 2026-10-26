@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create a made-up home folder for DiskLens screenshots.
+"""Create a made-up home folder for Deletable screenshots.
 
-    python3 scripts/make-demo.py ~/disklens-demo
-    open --env DISKLENS_DEMO_HOME=$HOME/disklens-demo /Applications/DiskLens.app
+    python3 scripts/make-demo.py ~/deletable-demo
+    open --env DELETABLE_DEMO_HOME=$HOME/deletable-demo /Applications/Deletable.app
 
 Then use Home Folder on the start screen. Uses about 1.6 GB of real disk space
 (files are filled with zeros); delete the folder when you're done.

@@ -5,7 +5,7 @@ enum RiskLevel: Int, Comparable {
     case safe = 0        // regenerated automatically, nothing is lost
     case redownload      // safe, but gets downloaded/rebuilt again (time and bandwidth)
     case review          // could be something you want: look before deleting
-    case unknown         // DiskLens has no rule for this
+    case unknown         // Deletable has no rule for this
     case danger          // app data, system files, personal libraries: don't delete here
 
     static func < (a: RiskLevel, b: RiskLevel) -> Bool { a.rawValue < b.rawValue }
@@ -221,7 +221,7 @@ enum RiskAssessor {
             current = (current as NSString).deletingLastPathComponent
             isLeaf = false
         }
-        return RiskAssessment(level: .unknown, reason: "DiskLens doesn't recognise this. Check what it is before deleting.")
+        return RiskAssessment(level: .unknown, reason: "Deletable doesn't recognise this. Check what it is before deleting.")
     }
 }
 

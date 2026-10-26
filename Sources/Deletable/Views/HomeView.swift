@@ -58,7 +58,7 @@ struct HomeView: View {
             MiniRings()
                 .frame(width: 56, height: 56)
             VStack(alignment: .leading, spacing: 4) {
-                Text("DiskLens")
+                Text("Deletable")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                 Text("See what's using your disk, collect what you don't need, and clear it.")
                     .foregroundStyle(.secondary)
@@ -89,9 +89,9 @@ struct HomeView: View {
                 .font(.title2)
                 .foregroundStyle(.yellow)
             VStack(alignment: .leading, spacing: 6) {
-                Text("For complete results, give DiskLens Full Disk Access")
+                Text("For complete results, give Deletable Full Disk Access")
                     .font(.headline)
-                Text("Without it, macOS hides Mail, Messages, Safari data, the Trash and other protected folders, and their space shows up as unscanned. Add DiskLens in System Settings › Privacy & Security › Full Disk Access, then relaunch it.")
+                Text("Without it, macOS hides Mail, Messages, Safari data, the Trash and other protected folders, and their space shows up as unscanned. Add Deletable in System Settings › Privacy & Security › Full Disk Access, then relaunch it.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

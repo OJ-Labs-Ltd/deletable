@@ -23,7 +23,7 @@ struct ContentView: View {
         }
         .navigationTitle(title)
         .toolbar { toolbar }
-        .alert("DiskLens", isPresented: Binding(
+        .alert("Deletable", isPresented: Binding(
             get: { state.alertMessage != nil },
             set: { if !$0 { state.alertMessage = nil } }
         )) {
@@ -43,9 +43,9 @@ struct ContentView: View {
 
     private var title: String {
         switch state.screen {
-        case .home: return "DiskLens"
+        case .home: return "Deletable"
         case .scanning: return "Scanning…"
-        case .results: return state.root?.displayName ?? "DiskLens"
+        case .results: return state.root?.displayName ?? "Deletable"
         case .clean: return "Quick Clean"
         }
     }

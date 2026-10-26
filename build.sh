@@ -1,6 +1,6 @@
 #!/bin/bash
-# Builds DiskLens.app from source. Usage:
-#   ./build.sh            build into ./build/DiskLens.app
+# Builds Deletable.app from source. Usage:
+#   ./build.sh            build into ./build/Deletable.app
 #   ./build.sh --install  also copy it to /Applications and launch it
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -13,13 +13,13 @@ fi
 echo "› Compiling (release)…"
 swift build -c release
 
-BIN="$(swift build -c release --show-bin-path)/DiskLens"
-APP="build/DiskLens.app"
+BIN="$(swift build -c release --show-bin-path)/Deletable"
+APP="build/Deletable.app"
 
 echo "› Assembling ${APP}"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
-cp "$BIN" "$APP/Contents/MacOS/DiskLens"
+cp "$BIN" "$APP/Contents/MacOS/Deletable"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 
 if [ -f Resources/AppIcon-1024.png ]; then
@@ -39,8 +39,8 @@ codesign --force --deep --sign - "$APP" >/dev/null
 echo "✓ Built $(pwd)/$APP"
 
 if [ "${1:-}" = "--install" ]; then
-  DEST="/Applications/DiskLens.app"
-  osascript -e 'tell application "DiskLens" to quit' >/dev/null 2>&1 || true
+  DEST="/Applications/Deletable.app"
+  osascript -e 'tell application "Deletable" to quit' >/dev/null 2>&1 || true
   sleep 1
   rm -rf "$DEST"
   cp -R "$APP" "$DEST"
