@@ -52,7 +52,7 @@ struct RiskAssessment {
 enum RiskAssessor {
     private typealias Rule = (RiskLevel, String)
 
-    private static let home = FileManager.default.homeDirectoryForCurrentUser.path
+    private static let home = Demo.homeURL.standardizedFileURL.path
 
     /// Exact paths. "~" is the home folder.
     private static let pathRules: [String: Rule] = {

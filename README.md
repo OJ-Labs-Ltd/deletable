@@ -4,6 +4,8 @@
 
 A free, open-source, native macOS app for seeing what's using your disk and clearing it safely. Written in SwiftUI, no dependencies.
 
+![DiskLens disk map with a risk rating for the hovered folder](docs/screenshots/disk-map.jpg)
+
 ## Features
 
 - **Disk map.** An interactive sunburst of any volume or folder. Hover to inspect, click a ring to zoom in, click the centre to go up.
@@ -23,6 +25,21 @@ A free, open-source, native macOS app for seeing what's using your disk and clea
 - **Quick Clean.** One-click clearing of user caches, logs, Xcode DerivedData / DeviceSupport / simulator caches, npm / Bun / Gradle / CocoaPods caches, old Downloads and the Trash.
 
 Nothing is deleted without confirmation, and by default everything goes to the Trash so you can undo it.
+
+## Screenshots
+
+| Collect items for deletion | Risk check before deleting |
+|---|---|
+| ![Collector bar holding three items with their risk icons](docs/screenshots/collector.jpg) | ![Confirmation listing the items to review first](docs/screenshots/confirm.jpg) |
+
+Screenshots use made-up data from `scripts/make-demo.py`. To recreate them:
+
+```bash
+python3 scripts/make-demo.py ~/disklens-demo
+open --env DISKLENS_DEMO_HOME=$HOME/disklens-demo /Applications/DiskLens.app
+```
+
+then choose **Home Folder**. Delete `~/disklens-demo` afterwards (about 1.5 GB).
 
 ## Build and install
 

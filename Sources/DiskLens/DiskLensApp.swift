@@ -46,3 +46,13 @@ enum Theme {
     static let panel = Color(red: 0.105, green: 0.115, blue: 0.145)
     static let accent = Color(red: 0.36, green: 0.62, blue: 1.0)
 }
+
+/// Demo mode for screenshots: `DISKLENS_DEMO_HOME=/path/to/demo` makes DiskLens treat that
+/// folder as the home folder (risk rules and the Home Folder shortcut), so screenshots can be
+/// taken of made-up data. See scripts/make-demo.py.
+enum Demo {
+    static let home: URL? = ProcessInfo.processInfo.environment["DISKLENS_DEMO_HOME"]
+        .map { URL(fileURLWithPath: $0, isDirectory: true) }
+
+    static var homeURL: URL { home ?? FileManager.default.homeDirectoryForCurrentUser }
+}

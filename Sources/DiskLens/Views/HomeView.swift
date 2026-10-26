@@ -22,9 +22,9 @@ struct HomeView: View {
                 section("Shortcuts") {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 18) {
                         ActionCard(symbol: "house.fill", title: "Home Folder",
-                                   subtitle: FileManager.default.homeDirectoryForCurrentUser.path,
+                                   subtitle: Demo.home == nil ? Demo.homeURL.path : "~",
                                    tint: .orange) {
-                            state.startScan(FileManager.default.homeDirectoryForCurrentUser)
+                            state.startScan(Demo.homeURL)
                         }
                         ActionCard(symbol: "folder.badge.gearshape", title: "Scan a Folder…",
                                    subtitle: "Pick any folder or external drive", tint: .teal) {
